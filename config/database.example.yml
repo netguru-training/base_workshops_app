@@ -1,0 +1,22 @@
+default: &default
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  pool:     5
+  username: postgres
+  template: template0
+
+development:
+  <<: *default
+  database: base_workshops_app_development
+  password:
+
+test:
+  <<: *default
+  database: base_workshops_app_test
+  password:
+
+production:
+  <<: *default
+  database: base_workshops_app_production
+  password:
